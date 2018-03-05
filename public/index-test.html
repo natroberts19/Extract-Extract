@@ -1,0 +1,76 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Check out all the latest travel news right here, right now!">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <title>In The Loop Travel News</title>
+  <style>
+  </style>
+</head>
+<body>
+
+<div class="container">
+  
+  <!-- Row #1. -->
+  <div class="row text-center">
+      <div class="panel-heading">
+          <h2>Read great travel tips here from In The Loop Travel!</h2>
+      </div>
+      <div class="panel panel-primary col-sm-12">
+          
+          <!-- News Panel. -->
+          <div class="panel-body" id="headlines">
+              <!-- Appended articles display in li area. Handlebars... Also have to refer to the iframe target (ex. <a href="link" target="iframe_a">)-->
+              
+          </div>
+      </div>
+  </div>
+  <br>
+  <!-- Row #2. -->
+  <div class="row text-center">
+      <!-- Embedded Web Page section. -->
+      <div class="col-sm-8" id="embed">
+          <div id="embed-page">
+              <div class="panel panel-primary">
+                  <div class="panel-heading" id="override">
+                      <h3>Trending Travel News</h3>
+                  </div>
+                  <div class="panel-body">
+                      <!-- Embedded website displays here. -->
+                      <iframe height="600px" width="100%" src="http://www.inthelooptravel.com/travel-tips.html" name="iframe_a"></iframe>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Comments section. -->
+      <div class="col-sm-4" id="">
+          <div id="comment-input">
+              <!-- Comment input fields display here. Handlebars... -->
+          </div>
+
+          <div id="savednotes">
+              <!-- Appended comments display here. Handlebars... -->
+              
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Footer. -->
+<div class="row footer text-center">
+  <div class="row">
+      <div class="col-sm-12" id="footer">
+          <!-- Footer text here. -->
+          <h4>All news stories that appear are provided by and property of In The Loop Travel.</h4>
+      </div>
+  </div>
+
+</div>
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/js/scrape-front.js"></script>
+  </body>
+</html>
