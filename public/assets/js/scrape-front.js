@@ -16,10 +16,11 @@ function getResults() {
 // Runs the getResults function as soon as the script is executed.
 getResults();
 
-// Whenever someone clicks a p tag.
+// Whenever someone clicks a p tag the Comments form will display.
 $(document).on("click", "p", function () {
   // Empty the notes from the note section.
   $("#notes").empty();
+
   // Save the id from the p tag.
   var thisId = $(this).attr("data-id");
 
@@ -31,6 +32,7 @@ $(document).on("click", "p", function () {
     // Now add the note information to the page.
     .then(function (data) {
       console.log(data);
+
       // The headline of the article.
       $("#comment-input").append("<h3>Comment on this article: <br>" + data.title + "</h3><br>");
       // An input to enter a name.
@@ -42,50 +44,51 @@ $(document).on("click", "p", function () {
 
       // If there's a comment about the article, show it in the saved notes area below the comment-input.
       if (data.note) {
-        // Place the the comment in the #savednotes area.
+        // Place the the comments in the #savednotes area.
+        // for (var i = 0; i < data.note.length; i++) {
+        //   // Display the saved comment history on the page.
+        //   $("#savednotes").append("<br>" + data.note[i].name + "<br>" + data.note[i].body + "<br><hr><br>");
+        // }
         $("#savednotes").append("<br>" + data.note.name + "<br>");
         $("#savednotes").append(data.note.body + "<br>");
         $("#savednotes").append("<hr><br>");
+
       }
     });
 });
 
-
-// When you click the savenote button
+// When you click the Submit button.
 $(document).on("click", "#savenote", function () {
   // Grab the id associated with the article from the submit button
   var thisId = $(this).attr("data-id");
 
-  // Run a POST request to change the note, using what's entered in the inputs
+  // Run a POST request to change the note, using what's entered in the inputs.
   $.ajax({
       method: "POST",
       url: "/api/headlines/" + thisId,
       data: {
-        // Value taken from name input
+        // Value taken from name input.
         name: $("#nameinput").val(),
-        // Value taken from note textarea
+        // Value taken from note textarea.
         body: $("#bodyinput").val()
       }
-      
+
     })
-    // Once the values are captured, we want to append the comment into savednotes and clear the comment input section.
+    // Once the values are captured, append the comment into savednotes section and clear the comment input section.
     .then(function (data) {
       // Log the response
       console.log(data);
-      // $("#savednotes").append("<hr><br>");
-      // $("#savednotes").append($('#nameinput').val());
-      // $("#savednotes").append($('#bodyinput').val());
-      
 
       // Empty the notes section
       $("#comment-input").empty();
+      $("#savednotes").empty();
 
-     
-            
+
+
     });
 
-  // Also, remove the values entered in the input and textarea for note entry
+  // Remove the values entered in the input and textarea for note entry.
   $("#nameinput").val("");
   $("#bodyinput").val("");
-  
+
 });
