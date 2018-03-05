@@ -36,12 +36,28 @@ app.set("view engine", "handlebars");
 // Static directory.
 app.use(express.static("public"));
 
+// ----- DATABASE CONFIG ------
+var databaseUri = 'mongodb://localhost/mongoHeadlines';
+
+if (process.env.MONGODB_URI) {
+  mongoose.connect(process.env.MONGODB_URI);
+} else {
+  mongoose.connect(databaseUri);
+}
+// ----- END DATABASE CONFIG -------
+
 // By default mongoose uses callbacks for async queries, we're setting it to use promises (.then syntax) instead
-// Connect to the Mongo DB
-// ** Look at supplemental file for how to connect to remote db.
-mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/mongoHeadlines", {
-  // useMongoClient: true
+// Connect to MONGOOSE
+var db = mongoose.connection;
+
+// show errors.
+db.on('error', function(err) {
+  console.log('Mongoose error: ', err);
+});
+
+// log a success message.
+db.once('open', function() {
+  console.log('Mongoose connection successful.');
 });
 
 // Routes.
