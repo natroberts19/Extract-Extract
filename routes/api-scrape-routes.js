@@ -20,11 +20,13 @@ module.exports = function (app) {
         // Save an empty result object
         var result = {};
 
-        // Add the text and href of every link, and save them as properties of the result object
+        // Add the text and href of every link, and save them as properties of the result object.
+        var newlink = result.link.replace(/^http:\/\//i, 'https://');
+
         result.title = $(this)
           .children("a")
           .text();
-        result.link = $(this)
+        newlink = $(this)
           .children("a")
           .attr("href");
 

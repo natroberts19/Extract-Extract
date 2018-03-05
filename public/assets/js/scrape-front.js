@@ -7,8 +7,10 @@ function getResults() {
     // For each one
     // var i = i.slice(0, 4);
     for (var i = 0; i < data.length; i++) {
-      // Display the information on the page
-      $("#headlines").append("<p data-id='" + data[i]._id + "'>" + data[i].title + '<br><a href="' + data[i].link + ' " target="iframe_a">' + data[i].link + '</a>');
+      var link = data[i].link.replace(/^http:\/\//i, 'https://');
+      
+      // Display the information on the page:
+      $("#headlines").append("<p data-id='" + data[i]._id + "'>" + data[i].title + '<br><a href="' + link + ' " target="iframe_a">' + data[i].link + '</a>');
     }
   });
 }
