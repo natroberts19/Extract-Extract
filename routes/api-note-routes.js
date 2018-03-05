@@ -2,10 +2,10 @@
 
 var db = require("../models");
 
-module.exports = function(app) {
+module.exports = function (app) {
 
-// Routes for the Comment (Note) section.
-// ======================================
+  // Routes for the Comment (Note) section.
+  // ======================================
 
   // GET route for grabbing a specific Headline by id, populate it with it's note.
   app.get("/api/headlines/:id", function (req, res) {
@@ -44,12 +44,12 @@ module.exports = function(app) {
         });
       })
       .then(function (dbHeadline) {
-        // If we were able to successfully update an Headline, send it back to the client
+        // If we were able to successfully update a Headline, send it back to the client.
         console.log("updated headline: ", dbHeadline);
         res.json(dbHeadline);
       })
       .catch(function (err) {
-        // If an error occurred, send it to the client
+        // If an error occurred, send it to the client.
         res.json(err);
       });
   });

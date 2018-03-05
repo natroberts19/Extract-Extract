@@ -5,6 +5,10 @@
     color: white;
 }
 
+hr {
+    border-color: orange;
+}
+
 .panel-heading {
     border-color: rgb(75, 168, 240);
     border-width: 2px;
