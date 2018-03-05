@@ -4,7 +4,7 @@
   "description": "web scraping app",
   "main": "server.js",
   "scripts": {
-    "test": "test.js",
+    "test": "node test.js",
     "start": "node server.js"
   },
   "repository": {
@@ -12,8 +12,8 @@
     "url": "git+https://github.com/natroberts19/Extract-Extract.git"
   },
   "keywords": [
-    "buffalo",
-    "bills",
+    "travel",
+    "tips",
     "news",
     "scraper",
     "extract",
