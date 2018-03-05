@@ -11,7 +11,7 @@ module.exports = function (app) {
   // GET route to scrape data from Buffalo Bills news site.
   app.get("/api/scrape", function (req, res) {
     // Make a request for the news section of ycombinator
-    axios.get("http://www.inthelooptravel.com/travel-tips.html").then(function (response) {
+    axios.get("https://www.inthelooptravel.com/travel-tips.html").then(function (response) {
       // Load the html body from request into cheerio
       var $ = cheerio.load(response.data);
       // var i = i.slice(0, 4);
