@@ -6,11 +6,10 @@ function getResults() {
   $.getJSON("/api/all", function (data) {
     // For each one
     // var i = i.slice(0, 4);
-    for (var i = 0; i < data.length; i++) {
-      var link = data[i].link.replace(/^http:\/\//i, 'https://');
-      
+    for (var i = 0; i < 5; i++) {
+
       // Display the information on the page:
-      $("#headlines").append("<p data-id='" + data[i]._id + "'>" + data[i].title + '<br><a href="' + link + ' " target="iframe_a">' + data[i].link + '</a>');
+      $("#headlines").append("<p data-id='" + data[i]._id + "'>" + data[i].title + '<br><a href="' + data[i].link + ' " target="iframe_a">' + data[i].link + '</a>');
     }
   });
 }

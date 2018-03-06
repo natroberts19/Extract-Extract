@@ -9,7 +9,11 @@ var NoteSchema = new Schema({
   // `name` is of type String
   name: String,
   // `body` is of type String
-  body: String
+  body: String,
+  date: { 
+    type: Date, 
+    default: Date.now 
+  }
 });
 
 // This creates our model from the above schema, using mongoose's model method
