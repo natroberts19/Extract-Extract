@@ -6,11 +6,11 @@ function getResults() {
   $.getJSON("/api/all", function (data) {
     // For each one
     // var i = i.slice(0, 4);
-    for (var i = 0; i < 8; i++) {
+    // for (var i = 0; i < 8; i++) {
 
       // Display the information on the page:
       // $("#headlines").append("<p data-id='" + data[i]._id + "'>" + data[i].title + '<br>' + data[i].link + '</p>');
-    }
+    // }
   });
 }
 
@@ -83,7 +83,6 @@ $(document).on("click", "#savenote", function () {
       // Empty the notes section
       $("#comment-input").empty();
       $("#savednotes").empty();
-
 
 
     });

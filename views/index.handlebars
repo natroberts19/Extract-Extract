@@ -1,29 +1,8 @@
 <div class="container">
     <!-- Row #1. -->
     <div class="row text-center">
-        <div class="panel-heading">
-            <h2>Travel news from Bored Panda!</h2>
-        </div>
         <div class="panel panel-primary col-sm-12">
-
-            <!-- News Panel. -->
-            <div class="panel-body" id="headlines">
-                <!-- Appended here. Handlebars... Also have to refer to the iframe target (ex. <a href="link" target="iframe_a">)-->
-                {{#each data}}
-
-                <p data-id="{{this._id}}" {{this.title}} <br>
-                    {{this.link}}</p>
-
-                {{/each}}
-            </div>
-        </div>
-    </div>
-    <br>
-
-    <!-- Row #2. -->
-    <div class="row text-center">
-        <!-- Embedded Web Page section. -->
-        <div class="col-sm-8" id="embed">
+            <!-- Embedded Web Page section. -->
             <div id="embed-page">
                 <div class="panel panel-primary">
                     <div class="panel-heading" id="override">
@@ -31,10 +10,32 @@
                     </div>
                     <div class="panel-body">
                         <!-- Embedded website displays here. -->
-                        <iframe height="600px" width="100%" src="https://www.boredpanda.com/category/travel/" name="iframe_a"></iframe>
+                        <iframe height="300px" width="100%" src="https://www.boredpanda.com/category/travel/" name="iframe_a"></iframe>
                     </div>
                 </div>
             </div>
+
+        </div>
+    </div>
+    <br>
+
+    <!-- Row #2. -->
+    <div class="row text-center">
+
+        <div class="col-sm-8" id="embed">
+
+            <!-- News Panel. -->
+            <div class="panel-body" id="articles">
+                <!-- Appended here. Handlebars... -->
+                {{#each articles}}
+
+                <p data-id="{{this._id}}"> {{this.title}}
+                    <br> {{this.link}}
+                </p>
+
+                {{/each}}
+            </div>
+
         </div>
 
         <!-- Comments section. -->
@@ -42,7 +43,7 @@
             <div id="comment-input">
                 <!-- Comment input fields display here. Handlebars... **replaces the append fields on scrape-front. -->
                 <h3>Comment on this article:
-                    <br> {{data.title}} </h3>
+                    <br> {{this.title}} </h3>
                 <br>
                 <h4>Your Name:
                     <br>
@@ -59,14 +60,12 @@
                 <br>
                 <br>
                 <br>
-                <button class='btn btn-default' data-id=' {{data._id}} ' id='savenote'></button>
+                <button class="btn btn-default" id="savenote" data-id="{{this._id}}">Submit</button>
 
             </div>
 
             <div id="savednotes">
                 <!-- Saved comments display here. Handlebars... -->
-
-                
 
             </div>
         </div>

@@ -20,10 +20,10 @@ app.get("/", function(req, res) {
     db.Note.find({})
     .then(function (dbNote) {
       var hbsObject = {
-        headline: dbHeadline,
+        articles: dbHeadline,
         note: dbNote
       }
-      res.render("index");
+      res.render("index", {articles: dbHeadline});
     })
   })
   

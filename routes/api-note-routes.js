@@ -18,6 +18,7 @@ module.exports = function (app) {
       .then(function (dbHeadline) {
         // If we were able to successfully find an Headline with the given id, send it back to the client
         res.json(dbHeadline);
+        // res.render(dbHeadline);
       })
       .catch(function (err) {
         // If an error occurred, send it to the client
@@ -47,6 +48,7 @@ module.exports = function (app) {
         // If we were able to successfully update a Headline, send it back to the client.
         console.log("updated headline: ", dbHeadline);
         res.json(dbHeadline);
+        // res.render(dbHeadline);
       })
       .catch(function (err) {
         // If an error occurred, send it to the client.
