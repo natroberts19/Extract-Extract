@@ -24,6 +24,8 @@ $(document).on("click", "p", function () {
 
   // Save the id from the p tag.
   var thisId = $(this).attr("data-id");
+  // var postId = $("#articles").attr("data-id", data[i]._id);
+  console.log("This p id: ", thisId);
 
   // Now make an ajax call for the Headline
   $.ajax({
@@ -62,6 +64,8 @@ $(document).on("click", "p", function () {
 $(document).on("click", "#savenote", function () {
   // Grab the id associated with the article from the submit button
   var thisId = $(this).attr("data-id");
+  // var saveId = $("savenote").attr("data-id", data[i]._id);
+  console.log("This savenote id: ", thisId);
 
   // Run a POST request to change the note, using what's entered in the inputs.
   $.ajax({
