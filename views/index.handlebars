@@ -11,12 +11,10 @@
                 <!-- Appended here. Handlebars... Also have to refer to the iframe target (ex. <a href="link" target="iframe_a">)-->
                 {{#each data}}
 
-                <p data-id="{{data[i]._id}}"> {{data[i].title}}
-                    <br>
-                    <a class="link" data-href=" {{data[i].link}} " target="iframe_a"> {{data[i].link}}</a>
+                <p data-id="{{this._id}}" {{this.title}} <br>
+                    {{this.link}}</p>
 
                 {{/each}}
-
             </div>
         </div>
     </div>
@@ -68,14 +66,7 @@
             <div id="savednotes">
                 <!-- Saved comments display here. Handlebars... -->
 
-                {{#if data.notes}} {{#each data.notes}}
-                <br>{{data.notes.name}}
-                <br> {{data.notes.body}}
-                <br>
-                <hr>
-                <br> {{else}}
-                <p>No comments yet!</p>
-                {{/if}} {{/each}}
+                
 
             </div>
         </div>

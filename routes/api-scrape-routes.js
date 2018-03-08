@@ -55,7 +55,8 @@ module.exports = function (app) {
         date: -1
       })
       .then(function (dbHeadline) {
-        res.json(dbHeadline);
+        // res.json(dbHeadline);
+        res.render(dbHeadline);
       })
       // If there are no errors, send the data to the browser as json.
       .catch(function (err) {

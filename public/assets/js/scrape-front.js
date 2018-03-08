@@ -9,7 +9,7 @@ function getResults() {
     for (var i = 0; i < 8; i++) {
 
       // Display the information on the page:
-      $("#headlines").append("<p data-id='" + data[i]._id + "'>" + data[i].title + '<br>' + data[i].link + '</p>');
+      // $("#headlines").append("<p data-id='" + data[i]._id + "'>" + data[i].title + '<br>' + data[i].link + '</p>');
     }
   });
 }
@@ -35,13 +35,13 @@ $(document).on("click", "p", function () {
       console.log(data);
 
       // The headline of the article.
-      $("#comment-input").append("<h3>Comment on this article: <br>" + data.title + "</h3><br>");
+      // $("#comment-input").append("<h3>Comment on this article: <br>" + data.title + "</h3><br>");
       // An input to enter a name.
-      $("#comment-input").append("Your Name: <br><br><input id='nameinput' name='name' ><br><br>");
+      // $("#comment-input").append("Your Name: <br><br><input id='nameinput' name='name' ><br><br>");
       // A textarea to add a new comment.
-      $("#comment-input").append("Add a Comment: <br><br><textarea id='bodyinput' name='body'></textarea><br><br>");
+      // $("#comment-input").append("Add a Comment: <br><br><textarea id='bodyinput' name='body'></textarea><br><br>");
       // A button to submit a new comment, with the id of the article saved to it (data-id).
-      $("#comment-input").append("<br><button class='btn btn-default' data-id='" + data._id + "' id='savenote'>Submit</button><br><hr>");
+      // $("#comment-input").append("<br><button class='btn btn-default' data-id='" + data._id + "' id='savenote'>Submit</button><br><hr>");
 
       // If there's a comment about the article, show it in the saved notes area below the comment-input.
       if (data.note) {
