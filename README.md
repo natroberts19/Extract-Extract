@@ -8,18 +8,18 @@ EXTRAct-EXTRAct is a web application that lets users view and leave comments on 
 
 ### Responsive UI:
 
-* Our responsive UI was achieved using **Bootstrap** elements and **Handlebars** templating and Bootstrap responsive elements including layout, forms, tables, and buttons.
+* Our responsive UI was achieved using **Bootstrap** elements and **Handlebars** templating and Bootstrap responsive elements including layout and buttons.
 
 ### Back-end Server and Routing:
 
-* Our back-end server is designed using **Node** and **Express.js** web server.
-* The server is backed by a **Mongo database** that utilizes **Mongoose** ORM's. The Mongo database persistently stores scraped website data and user comments for each article. Mongoose is used to create the collection structure and to develop the GET and POST routing queries we use to pass information between back and front-ends. 
-* Our application is live-hosted on the **Heroku** web service.
+* The back-end server is designed using **Node** and **Express.js** web server.
+* The server is backed by a **Mongo database** that utilizes **Mongoose** ORM's. The Mongo database persistently stores scraped website data and user comments for each article. Mongoose is used to create the collection structure and to develop the GET and POST routing queries used to pass information between back and front-ends. 
+* This application is live-hosted on the **Heroku** web service.
 
 ### NPM Packages:
 
 * The **Cheerio** npm is used to scrape the Bored Panda website.
-* Our middle-ware functionality is achieved through **body-parser** npm and **morgan**, which is an HTTP request logger middleware for node.js.
+* The middleware functionality is achieved through **body-parser** npm and **morgan**, which is an HTTP request logger middleware for node.js.
 
 
 ## See my App: 
