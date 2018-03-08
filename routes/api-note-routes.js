@@ -27,7 +27,7 @@ module.exports = function (app) {
 
   // ==============================================================
 
-  // POST route for saving/updating a Headline's associated Note.
+  // POST route for saving/updating a Headline's associated comments (Note).
   app.post("/api/headlines/:id", function (req, res) {
     // Create a new note and pass the req.body to the entry
     db.Note.create(req.body)

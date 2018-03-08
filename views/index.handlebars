@@ -1,75 +1,93 @@
 <div class="container">
-    <div class="jumbtron text-center">
-        <h1>EXTRAct! EXTRAact!</h1>
-        <h2>Read all the latest Buffalo Bills news right here!</h2>
-    </div>
-    <br>
     <!-- Row #1. -->
     <div class="row text-center">
-        <div class="panel panel-primary col-sm-12" id="articles">
+        <div class="panel-heading">
+            <h2>Travel news from Bored Panda!</h2>
+        </div>
+        <div class="panel panel-primary col-sm-12">
+
             <!-- News Panel. -->
-            <div class="panel-body">
-                <!-- Appended articles display here. Handlebars... Also have to refer to the iframe target (ex. <a href="link" target="iframe_a">)-->
-                <ul>
-                    <li>
-                        {{#each reservation}} {{> tables/reservation-block}} {{/each}}
-                    </li>
-                </ul>
+            <div class="panel-body" id="headlines">
+                <!-- Appended here. Handlebars... Also have to refer to the iframe target (ex. <a href="link" target="iframe_a">)-->
+                {{#each data}}
+
+                <p data-id="{{data[i]._id}}"> {{data[i].title}}
+                    <br>
+                    <a class="link" data-href=" {{data[i].link}} " target="iframe_a"> {{data[i].link}}</a>
+
+                {{/each}}
+
             </div>
         </div>
     </div>
     <br>
+
     <!-- Row #2. -->
     <div class="row text-center">
         <!-- Embedded Web Page section. -->
-        <div class="col-sm-6" id="embed">
+        <div class="col-sm-8" id="embed">
             <div id="embed-page">
                 <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Trending Bills News</h3>
+                    <div class="panel-heading" id="override">
+                        <h3>Trending Travel Stories</h3>
                     </div>
                     <div class="panel-body">
                         <!-- Embedded website displays here. -->
-                        <iframe height="600px" width="100%" src="https://www.buffalobills.com/news/index.html" name="iframe_a"></iframe>
+                        <iframe height="600px" width="100%" src="https://www.boredpanda.com/category/travel/" name="iframe_a"></iframe>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Comments section. -->
-        <div class="col-sm-6" id="comments">
-            <h1>Comments</h1>
+        <div class="col-sm-4" id="">
             <div id="comment-input">
-                <p>Name</p>
-                <!-- Type in name. -->
-                <input type="text" id="name" />
+                <!-- Comment input fields display here. Handlebars... **replaces the append fields on scrape-front. -->
+                <h3>Comment on this article:
+                    <br> {{data.title}} </h3>
                 <br>
-                <p>Comment</p>
-                <textarea id="comment">
-                    <!-- Type in comment. -->
-                </textarea>
-                <div id="buttons">
-                    <div id="actionbutton">
-                        <!-- Submit comment. -->
-                        <button class="btn btn-default" id="makenew">Submit</button>
-                    </div>
-                </div>
+                <h4>Your Name:
+                    <br>
+                    <br>
+                    <input id='nameinput' name='name'>
+                </h4>
+                <br>
+                <br>
+                <h4>Add a Comment:
+                    <br>
+                    <br>
+                    <textarea id='bodyinput' name='body'></textarea>
+                </h4>
+                <br>
+                <br>
+                <br>
+                <button class='btn btn-default' data-id=' {{data._id}} ' id='savenote'></button>
+
             </div>
 
-            <div id="results">
-                <!-- Appended comments display here. Handlebars... -->
-                {{#each reservation}} {{> tables/reservation-block}} {{/each}}
+            <div id="savednotes">
+                <!-- Saved comments display here. Handlebars... -->
+
+                {{#if data.notes}} {{#each data.notes}}
+                <br>{{data.notes.name}}
+                <br> {{data.notes.body}}
+                <br>
+                <hr>
+                <br> {{else}}
+                <p>No comments yet!</p>
+                {{/if}} {{/each}}
+
             </div>
         </div>
     </div>
 </div>
 
-<!-- Footer. -->
+<!-- Row #3 Footer. -->
 <div class="row footer text-center">
     <div class="row">
         <div class="col-sm-12" id="footer">
             <!-- Footer text here. -->
-            <p>All news stories that appear are provided by, and property of, the Buffalo Bills and buffalobills.com</p>
+            <h4>All news stories that appear are provided by and property of The Bored Panda.</h4>
         </div>
     </div>
 

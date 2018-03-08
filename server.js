@@ -16,7 +16,6 @@ var PORT = process.env.PORT || 8080;
 // Require all models.
 var db = require("./models");
 
-
 // Configure the middleware, Morgan logger for logging requests.
 app.use(logger("dev"));
 
